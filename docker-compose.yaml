@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  linux:
+    build: .
+    ports: [90:80]
+  nginx:
+    image: nginx:latest
+  database: 
+    image: mysql:latest
+    restart: always
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: '123'
